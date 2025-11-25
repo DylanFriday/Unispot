@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>UniSpot – Study Sheets (Admin)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header class="nav">
+      <div class="nav-left">
+        <div class="logo-dot"></div>
+        <span class="logo-text">Uni<span>Spot</span></span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="admin-studysheets.html" class="nav-link active"
+          >Study Sheets</a
+        >
+        <a href="admin-reviews.html" class="nav-link">Reviews</a>
+        <a href="admin-apartments.html" class="nav-link">Apartments</a>
+      </nav>
+
+      <div class="nav-right">
+        <span class="role-pill">Admin</span>
+        <button
+          class="ghost-btn small"
+          onclick="window.location.href='login.html'"
+        >
+          Logout
+        </button>
+      </div>
+    </header>
+
+    <main class="main">
+      <aside class="sidebar">
+        <h2>Admin Panel</h2>
+
+        <section class="sidebar-section">
+          <h3>Filter by Status</h3>
+          <div class="chip-row">
+            <button class="chip chip-active">All</button>
+            <button class="chip">Pending</button>
+            <button class="chip">Approved</button>
+            <button class="chip">Rejected</button>
+          </div>
+        </section>
+      </aside>
+
+      <section class="content">
+        <section class="hero">
+          <h1>Study Sheet Approvals</h1>
+          <p>
+            Review uploaded sheets and control what becomes visible to students.
+          </p>
+        </section>
+
+        <div class="tab-header">
+          <h2>Pending & Active Sheets</h2>
+        </div>
+
+        <div class="card-grid">
+          <article class="card">
+            <header class="card-header">
+              <h3>CSX2006 – Formula Sheet</h3>
+              <span class="status status-pending">Pending</span>
+            </header>
+            <p class="card-sub">Uploaded by: Student #6642</p>
+            <p class="card-body">
+              One-page formula sheet for midterm coverage. Check for allowed
+              content and exam policy compliance.
+            </p>
+            <footer class="card-footer">
+              <button class="ghost-btn">View File</button>
+              <button class="ghost-btn">Reject</button>
+              <button class="primary-btn">Approve</button>
+            </footer>
+          </article>
+
+          <article class="card">
+            <header class="card-header">
+              <h3>ITC220 – Heap & BST Cheat Sheet</h3>
+              <span class="status status-approved">Approved</span>
+            </header>
+            <p class="card-sub">Uploaded by: Student #6701</p>
+            <p class="card-body">
+              Already visible to students. Check payment status and release
+              funds after verification.
+            </p>
+            <footer class="card-footer">
+              <button class="ghost-btn">View Payments</button>
+              <button class="primary-btn">Release Funds</button>
+            </footer>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>UniSpot – Reviews (Admin)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header class="nav">
+      <div class="nav-left">
+        <div class="logo-dot"></div>
+        <span class="logo-text">Uni<span>Spot</span></span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="admin-studysheets.html" class="nav-link">Study Sheets</a>
+        <a href="admin-reviews.html" class="nav-link active">Reviews</a>
+        <a href="admin-apartments.html" class="nav-link">Apartments</a>
+      </nav>
+
+      <div class="nav-right">
+        <span class="role-pill">Admin</span>
+        <button
+          class="ghost-btn small"
+          onclick="window.location.href='login.html'"
+        >
+          Logout
+        </button>
+      </div>
+    </header>
+
+    <main class="main">
+      <aside class="sidebar">
+        <h2>Moderation</h2>
+
+        <section class="sidebar-section">
+          <h3>Status</h3>
+          <div class="chip-row">
+            <button class="chip chip-active">All</button>
+            <button class="chip">Flagged</button>
+            <button class="chip">Under Review</button>
+          </div>
+        </section>
+      </aside>
+
+      <section class="content">
+        <section class="hero">
+          <h1>Review Moderation</h1>
+          <p>
+            Check flagged reviews and decide whether to keep or remove them.
+          </p>
+        </section>
+
+        <div class="tab-header">
+          <h2>Flagged Reviews</h2>
+        </div>
+
+        <div class="list">
+          <article class="card">
+            <header class="card-header">
+              <div>
+                <h3>ITC220 – Ajarn Napat</h3>
+                <p class="card-sub">Flagged: 3 times</p>
+              </div>
+              <span class="status status-pending">Under Review</span>
+            </header>
+            <p class="card-body">
+              “Class is too fast and no time for questions.”<br />
+              <em>Student language: Thai – translation available.</em>
+            </p>
+            <footer class="card-footer">
+              <button class="ghost-btn">View Original</button>
+              <button class="ghost-btn">View Translation</button>
+              <button class="ghost-btn">Allow</button>
+              <button class="danger-btn">Remove</button>
+            </footer>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

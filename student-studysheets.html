@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>UniSpot – Study Sheets (Student)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header class="nav">
+      <div class="nav-left">
+        <div class="logo-dot"></div>
+        <span class="logo-text">Uni<span>Spot</span></span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="student-studysheets.html" class="nav-link active"
+          >Study Sheets</a
+        >
+        <a href="student-reviews.html" class="nav-link">Reviews</a>
+        <a href="student-apartments.html" class="nav-link">Apartments</a>
+      </nav>
+
+      <div class="nav-right">
+        <span class="role-pill">Student</span>
+        <button
+          class="ghost-btn small"
+          onclick="window.location.href='login.html'"
+        >
+          Logout
+        </button>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="main">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <h2>Filters</h2>
+
+        <section class="sidebar-section">
+          <h3>Status</h3>
+          <div class="chip-row">
+            <button class="chip chip-active">All</button>
+            <button class="chip">Pending</button>
+            <button class="chip">Approved</button>
+            <button class="chip">Rejected</button>
+          </div>
+        </section>
+
+        <section class="sidebar-section">
+          <h3>Search</h3>
+          <input
+            type="text"
+            class="input"
+            placeholder="Search course or title…"
+          />
+        </section>
+      </aside>
+
+      <!-- CONTENT -->
+      <section class="content">
+        <section class="hero">
+          <h1>Study Sheet Marketplace</h1>
+          <p>Buy and upload student-made study sheets for your courses.</p>
+        </section>
+
+        <div class="tab-header">
+          <h2>Your Study Sheets</h2>
+          <button class="primary-btn" id="open-upload-sheet">
+            + Upload Sheet
+          </button>
+        </div>
+
+        <div class="card-grid" id="sheet-grid">
+          <!-- Card 1 -->
+          <article class="card">
+            <header class="card-header">
+              <h3>CSX2006 – Formula Sheet</h3>
+              <span class="status status-approved">Approved</span>
+            </header>
+            <p class="card-sub">
+              Course: Mathematics & Statistics for Data Science
+            </p>
+            <p class="card-body">
+              One-page summary of key formulas: mean, variance, probability
+              rules, and normal distribution.
+            </p>
+            <div class="card-meta">
+              <span class="price">฿80</span>
+              <span class="rating">★ 4.8 (32)</span>
+            </div>
+            <footer class="card-footer">
+              <button class="ghost-btn">Preview</button>
+              <button class="primary-btn">Buy</button>
+            </footer>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card">
+            <header class="card-header">
+              <h3>ITC220 – Heap & BST Cheat Sheet</h3>
+              <span class="status status-pending">Pending</span>
+            </header>
+            <p class="card-sub">Course: Data Structures & Algorithms</p>
+            <p class="card-body">
+              Visual diagrams for heaps, priority queues, and binary search
+              trees. Includes Big-O comparison table.
+            </p>
+            <div class="card-meta">
+              <span class="price">฿120</span>
+              <span class="rating">★ 4.9 (57)</span>
+            </div>
+            <footer class="card-footer">
+              <button class="ghost-btn">Edit</button>
+              <button class="ghost-btn">Delete</button>
+            </footer>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="card">
+            <header class="card-header">
+              <h3>INT1001 – Lecture Notes Pack</h3>
+              <span class="status status-rejected">Rejected</span>
+            </header>
+            <p class="card-sub">Course: Intro to Programming</p>
+            <p class="card-body">
+              Week 1–8 notes with sample quiz questions for loops, arrays, and
+              basic OOP.
+            </p>
+            <div class="card-meta">
+              <span class="price">฿60</span>
+              <span class="rating">★ 4.2 (18)</span>
+            </div>
+            <footer class="card-footer">
+              <button class="ghost-btn">View Reason</button>
+            </footer>
+          </article>
+        </div>
+        <div id="sheet-modal" class="modal-backdrop hidden">
+          <div class="modal">
+            <div class="modal-header">
+              <h2>Upload Study Sheet</h2>
+              <button class="modal-close" data-close-modal>&times;</button>
+            </div>
+            <div class="modal-body">
+              <p>Demo form – for UI only, no real file upload.</p>
+              <form id="sheet-form">
+                <label>
+                  Title
+                  <input type="text" class="input" name="title" required />
+                </label>
+                <label>
+                  Course
+                  <input type="text" class="input" name="course" required />
+                </label>
+                <label>
+                  Type
+                  <input
+                    type="text"
+                    class="input"
+                    name="type"
+                    placeholder="Formula sheet, summary…"
+                  />
+                </label>
+                <label>
+                  Price (THB)
+                  <input
+                    type="number"
+                    class="input"
+                    name="price"
+                    min="0"
+                    required
+                  />
+                </label>
+                <label>
+                  Short description
+                  <textarea
+                    class="input"
+                    name="description"
+                    rows="3"
+                  ></textarea>
+                </label>
+                <div class="modal-footer">
+                  <button type="button" class="ghost-btn" data-close-modal>
+                    Cancel
+                  </button>
+                  <button type="submit" class="primary-btn">Save Sheet</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>UniSpot – Apartments (Admin)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header class="nav">
+      <div class="nav-left">
+        <div class="logo-dot"></div>
+        <span class="logo-text">Uni<span>Spot</span></span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="admin-studysheets.html" class="nav-link">Study Sheets</a>
+        <a href="admin-reviews.html" class="nav-link">Reviews</a>
+        <a href="admin-apartments.html" class="nav-link active">Apartments</a>
+      </nav>
+
+      <div class="nav-right">
+        <span class="role-pill">Admin</span>
+        <button
+          class="ghost-btn small"
+          onclick="window.location.href='login.html'"
+        >
+          Logout
+        </button>
+      </div>
+    </header>
+
+    <main class="main">
+      <aside class="sidebar">
+        <h2>Lease Listings</h2>
+
+        <section class="sidebar-section">
+          <h3>Status</h3>
+          <div class="chip-row">
+            <button class="chip chip-active">All</button>
+            <button class="chip">Pending</button>
+            <button class="chip">Approved</button>
+            <button class="chip">Transferred</button>
+          </div>
+        </section>
+      </aside>
+
+      <section class="content">
+        <section class="hero">
+          <h1>Apartment Verification</h1>
+          <p>
+            Approve or reject student apartment listings and track transfers.
+          </p>
+        </section>
+
+        <div class="tab-header">
+          <h2>Listings</h2>
+        </div>
+
+        <div class="card-grid">
+          <article class="card">
+            <header class="card-header">
+              <h3>ABAC City Condo – Room 1205</h3>
+              <span class="status status-approved">Approved</span>
+            </header>
+            <p class="card-sub">Owner: Student #6642</p>
+            <p class="card-body">
+              Fully furnished 1-bedroom with balcony. Listing already approved
+              and visible to students.
+            </p>
+            <footer class="card-footer">
+              <button class="ghost-btn">View Details</button>
+              <button class="primary-btn">Mark Transferred</button>
+            </footer>
+          </article>
+
+          <article class="card">
+            <header class="card-header">
+              <h3>Supalai Park – Studio 18F</h3>
+              <span class="status status-pending">Pending</span>
+            </header>
+            <p class="card-sub">Owner: Student #6701</p>
+            <p class="card-body">
+              Studio near BTS, wants to exit contract early. Check completeness
+              and appropriateness before approving.
+            </p>
+            <footer class="card-footer">
+              <button class="ghost-btn">Reject</button>
+              <button class="primary-btn">Approve</button>
+            </footer>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

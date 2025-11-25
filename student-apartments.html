@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>UniSpot – Apartments (Student)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header class="nav">
+      <div class="nav-left">
+        <div class="logo-dot"></div>
+        <span class="logo-text">Uni<span>Spot</span></span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="student-studysheets.html" class="nav-link">Study Sheets</a>
+        <a href="student-reviews.html" class="nav-link">Reviews</a>
+        <a href="student-apartments.html" class="nav-link active">Apartments</a>
+      </nav>
+
+      <div class="nav-right">
+        <span class="role-pill">Student</span>
+        <button
+          class="ghost-btn small"
+          onclick="window.location.href='login.html'"
+        >
+          Logout
+        </button>
+      </div>
+    </header>
+
+    <!-- MAIN LAYOUT -->
+    <main class="main">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <h2>Filters</h2>
+
+        <section class="sidebar-section">
+          <h3>Area</h3>
+          <input
+            type="text"
+            class="input"
+            placeholder="Bang Na, Bang Sao Thong, Samut Prakan…"
+          />
+        </section>
+
+        <section class="sidebar-section">
+          <h3>Budget</h3>
+          <input type="text" class="input" placeholder="Max rent per month…" />
+        </section>
+      </aside>
+
+      <!-- CONTENT -->
+      <section class="content">
+        <!-- HERO -->
+        <section class="hero">
+          <h1>Apartment Lease Exchange</h1>
+          <p>
+            Find or transfer apartments safely with other students. UniSpot
+            tracks listings and interest, while real contracts are handled
+            outside the system.
+          </p>
+        </section>
+
+        <!-- HEADER + ACTION -->
+        <div class="tab-header">
+          <h2>Listings</h2>
+          <button class="primary-btn" id="open-apartment-modal">
+            + List Apartment
+          </button>
+        </div>
+
+        <!-- LISTINGS GRID -->
+        <div class="card-grid" id="apartment-grid">
+          <!-- Example listing based on your screenshot -->
+          <article class="card">
+            <header class="card-header">
+              <h3>Swift Condo – 1 Bedroom</h3>
+              <span class="status status-approved">Available</span>
+            </header>
+            <p class="card-body">
+              For rent Condo SWIFT, Building E, 1 Bedroom, 1 Bathroom, 29 sq.m
+              on Floor 7. Fully furnished with air conditioner, TV,
+              refrigerator, water heater and microwave.
+            </p>
+            <ul class="apartment-meta">
+              <li>Rent: <strong>฿7,500 / month</strong></li>
+              <li>
+                Deposit: <strong>2 months</strong>, Advance:
+                <strong>1 month</strong>
+              </li>
+            </ul>
+            <footer class="card-footer">
+              <button
+                class="ghost-btn btn-apartment-details"
+                data-title="Swift Condo – 1 Bedroom"
+                data-price="฿7,500 / month"
+                data-address="Swift Bang Sao Thong, Samut Prakan"
+                data-roomtype="1 Bedroom"
+                data-floor="7.0"
+                data-bedrooms="1 Bed"
+                data-bathrooms="1 Bath"
+                data-size="29"
+                data-deposit="2 months"
+                data-advance="1 month"
+                data-description="NR55588
+For rent Condo SWIFT
+Type 1 bedroom
+Floor 7, Room size 29 sq. meter
+1 Bedroom, 1 Bathroom
+Building E
+Amenities
+- Furnitures
+- Air conditioner
+- TV
+- Refrigerator
+- Water Heater
+- Microwave
+
+2 months deposit, 1 month advance
+
+Minimum contract 1 year
+---------------------------------------------"
+              >
+                Details
+              </button>
+              <button class="primary-btn">Express Interest</button>
+            </footer>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- LIST APARTMENT MODAL -->
+    <div id="apartment-form-modal" class="modal-backdrop hidden">
+      <div class="modal">
+        <div class="modal-header">
+          <h2>List Apartment</h2>
+          <button class="modal-close" data-close-modal>&times;</button>
+        </div>
+        <div class="modal-body">
+          <p>Demo listing form – this is only UI, no real backend.</p>
+          <form id="apartment-form">
+            <label>
+              Project / Apartment name
+              <input type="text" class="input" name="title" required />
+            </label>
+            <label>
+              Monthly rent (THB)
+              <input type="number" class="input" name="rent" required />
+            </label>
+            <label>
+              Deposit (e.g. 2 months)
+              <input type="text" class="input" name="deposit" />
+            </label>
+            <label>
+              Advance payment (e.g. 1 month)
+              <input type="text" class="input" name="advance" />
+            </label>
+            <label>
+              Room type
+              <input
+                type="text"
+                class="input"
+                name="roomtype"
+                placeholder="1 Bedroom, Studio…"
+              />
+            </label>
+            <label>
+              Floor
+              <input type="text" class="input" name="floor" />
+            </label>
+            <label>
+              Room size (sq.m.)
+              <input type="text" class="input" name="size" />
+            </label>
+            <label>
+              Address / Area
+              <input type="text" class="input" name="address" />
+            </label>
+            <label>
+              Description (amenities, contract, etc.)
+              <textarea class="input" name="description" rows="4"></textarea>
+            </label>
+            <div class="modal-footer">
+              <button type="button" class="ghost-btn" data-close-modal>
+                Cancel
+              </button>
+              <button type="submit" class="primary-btn">Create Listing</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- APARTMENT DETAIL MODAL (LIKE THE SCREENSHOT) -->
+    <div id="apartment-detail-modal" class="modal-backdrop hidden">
+      <div class="modal">
+        <div class="modal-header">
+          <h2 id="detail-title">Listing Detail</h2>
+          <button class="modal-close" data-close-modal>&times;</button>
+        </div>
+        <div class="modal-body">
+          <p><strong id="detail-price">฿0 / month</strong></p>
+
+          <div class="detail-grid">
+            <!-- LEFT: LISTING DETAIL TEXT -->
+            <div>
+              <div class="detail-section-title">Listing Detail</div>
+              <pre id="detail-description" class="detail-list"></pre>
+            </div>
+
+            <!-- RIGHT: LISTING INFORMATION TABLE -->
+            <div>
+              <div class="detail-section-title">Listing Information</div>
+              <table class="detail-table">
+                <tr>
+                  <td>Project name</td>
+                  <td id="detail-project">–</td>
+                </tr>
+                <tr>
+                  <td>Price</td>
+                  <td id="detail-price-small">–</td>
+                </tr>
+                <tr>
+                  <td>Deposit</td>
+                  <td id="detail-deposit">–</td>
+                </tr>
+                <tr>
+                  <td>Advanced Payment</td>
+                  <td id="detail-advance">–</td>
+                </tr>
+                <tr>
+                  <td>Room type</td>
+                  <td id="detail-roomtype">–</td>
+                </tr>
+                <tr>
+                  <td>On Floor</td>
+                  <td id="detail-floor">–</td>
+                </tr>
+                <tr>
+                  <td>Number of bedrooms</td>
+                  <td id="detail-bedrooms">–</td>
+                </tr>
+                <tr>
+                  <td>Number of bathrooms</td>
+                  <td id="detail-bathrooms">–</td>
+                </tr>
+                <tr>
+                  <td>Room size (sq.m.)</td>
+                  <td id="detail-size">–</td>
+                </tr>
+                <tr>
+                  <td>Address</td>
+                  <td id="detail-address">–</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHARED JS FOR MODALS & DYNAMIC CARDS -->
+    <script src="/app.js"></script>
+  </body>
+</html>

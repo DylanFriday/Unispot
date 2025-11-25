@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>UniSpot – Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <script defer src="/login.js"></script>
+  </head>
+  <body>
+    <div class="login-wrapper">
+      <div class="login-card">
+        <h1>UniSpot</h1>
+        <p class="login-subtitle">Sign in as Student or Admin to continue.</p>
+
+        <div class="login-role-toggle">
+          <button class="role-tab active" data-role="student">Student</button>
+          <button class="role-tab" data-role="admin">Admin</button>
+        </div>
+
+        <form id="login-form">
+          <label class="login-label">
+            Email
+            <input
+              type="email"
+              id="login-email"
+              class="input"
+              placeholder="student@unispot.com"
+              required
+            />
+          </label>
+
+          <label class="login-label">
+            Password
+            <input
+              type="password"
+              id="login-password"
+              class="input"
+              placeholder="••••••••"
+              required
+            />
+          </label>
+
+          <button type="submit" class="primary-btn full-width">Log in</button>
+
+          <p class="login-hint">
+            <strong>Demo accounts (for presentation):</strong><br />
+            Student → student@unispot.com / student123<br />
+            Admin → admin@unispot.com / admin123
+          </p>
+
+          <p id="login-error" class="login-error"></p>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

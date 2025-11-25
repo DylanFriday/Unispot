@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>UniSpot – Reviews (Student)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header class="nav">
+      <div class="nav-left">
+        <div class="logo-dot"></div>
+        <span class="logo-text">Uni<span>Spot</span></span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="student-studysheets.html" class="nav-link">Study Sheets</a>
+        <a href="student-reviews.html" class="nav-link active">Reviews</a>
+        <a href="student-apartments.html" class="nav-link">Apartments</a>
+      </nav>
+
+      <div class="nav-right">
+        <span class="role-pill">Student</span>
+        <button
+          class="ghost-btn small"
+          onclick="window.location.href='login.html'"
+        >
+          Logout
+        </button>
+      </div>
+    </header>
+
+    <main class="main">
+      <aside class="sidebar">
+        <h2>Filters</h2>
+
+        <section class="sidebar-section">
+          <h3>Course</h3>
+          <input type="text" class="input" placeholder="Search course name…" />
+        </section>
+
+        <section class="sidebar-section">
+          <h3>Teacher</h3>
+          <input type="text" class="input" placeholder="Search teacher name…" />
+        </section>
+      </aside>
+
+      <section class="content">
+        <section class="hero">
+          <h1>Teacher & Course Reviews</h1>
+          <p>Share honest feedback and read what other students think.</p>
+        </section>
+
+        <div class="tab-header">
+          <h2>Latest Reviews</h2>
+          <button class="primary-btn" id="open-review-modal">
+            + Write Review
+          </button>
+        </div>
+
+        <div class="list" id="review-list">
+          <article class="card">
+            <header class="card-header">
+              <div>
+                <h3>CSX2006 – Dr. Smith</h3>
+                <p class="card-sub">Mathematics & Statistics</p>
+              </div>
+              <span class="rating-large">★ 5.0</span>
+            </header>
+            <p class="card-body">
+              Clear explanations, good pace, and lots of practical examples.
+              Weekly quizzes are hard but prepare you well.
+            </p>
+            <footer class="card-footer">
+              <button class="ghost-btn">Upvote</button>
+              <button class="ghost-btn">Report</button>
+            </footer>
+          </article>
+
+          <article class="card">
+            <header class="card-header">
+              <div>
+                <h3>ITC220 – Ajarn Napat</h3>
+                <p class="card-sub">Data Structures & Algorithms</p>
+              </div>
+              <span class="rating-large">★ 3.0</span>
+            </header>
+            <p class="card-body">
+              Slides are heavy and fast, but if you review after class, you can
+              still follow. Tutorial sessions help a lot.
+            </p>
+            <footer class="card-footer">
+              <button class="ghost-btn">Upvote</button>
+              <button class="ghost-btn">Report</button>
+            </footer>
+          </article>
+        </div>
+        <div id="review-modal" class="modal-backdrop hidden">
+          <div class="modal">
+            <div class="modal-header">
+              <h2>Write a Review</h2>
+              <button class="modal-close" data-close-modal>&times;</button>
+            </div>
+            <div class="modal-body">
+              <form id="review-form">
+                <label>
+                  Course name
+                  <input type="text" class="input" name="course" required />
+                </label>
+                <label>
+                  Teacher name
+                  <input type="text" class="input" name="teacher" required />
+                </label>
+                <label>
+                  Rating (1–5)
+                  <input
+                    type="number"
+                    class="input"
+                    name="rating"
+                    min="1"
+                    max="5"
+                    required
+                  />
+                </label>
+                <label>
+                  Your review
+                  <textarea
+                    class="input"
+                    name="text"
+                    rows="3"
+                    required
+                  ></textarea>
+                </label>
+                <div class="modal-footer">
+                  <button type="button" class="ghost-btn" data-close-modal>
+                    Cancel
+                  </button>
+                  <button type="submit" class="primary-btn">Post Review</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <script src="app.js"></script>
+      </section>
+    </main>
+  </body>
+</html>
